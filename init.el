@@ -189,7 +189,7 @@ values."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -370,8 +370,8 @@ you should place your code here."
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
 
-  (setq ns-use-srgb-colorspace nil)
-  (setq powerline-default-separator 'slant)
+  (setq ns-use-srgb-colorspace t)
+  (setq powerline-default-separator nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
