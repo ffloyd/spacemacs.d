@@ -36,14 +36,29 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
+     ;;
+     ;; Essential layers
+     ;;
+
      helm
-     ;; auto-completion has a lot of options. So it should be configured properly in a future.
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
      better-defaults
-     emacs-lisp
+     osx
+
+     ;;
+     ;; Tools
+     ;;
+
      git
-     markdown
+     (version-control :variables
+                      version-control-diff-side 'left
+                      version-control-diff-tool 'git-gutter
+                      version-control-global-margin t)
+
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t) ;; auto-completion has a lot of options. So it should be configured properly in a future.
+     syntax-checking
+
      (org :variables
           org-enable-github-support t
           org-enable-bootstrap-support t
@@ -52,28 +67,40 @@ values."
           ;; also org-projectile added to excluded packages
           ;; org-projectile-file "TODOs.org"
           )
+
      (shell :variables
             shell-default-shell 'eshell
             shell-enable-smart-eshell t
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
-     syntax-checking
-     (version-control :variables
-                      version-control-diff-side 'left
-                      version-control-diff-tool 'git-gutter
-                      version-control-global-margin t)
-     osx
-     themes-megapack ;; I need only 2 themes. Maybe private layer is a better solution
-     html
-     yaml
-     csv
+
+     ;;
+     ;; Languages & Frameworks
+     ;;
+
+     emacs-lisp
+     markdown
      shell-scripts
      (ruby :variables
            ruby-enable-enh-ruby-mode t
            ruby-version-manager 'rbenv
            ruby-test-runner 'rspec)
+     html
      javascript
+     yaml
+     csv
+
+     ;;
+     ;; Private layers
+     ;;
+
+     ffloyds-themes
+
+     ;;
+     ;; Layers for review
+     ;;
+
+     ;; spell-checking
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -84,11 +111,6 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(org-projectile
-                                    firebelly-theme
-                                    niflheim-theme
-                                    tronesque-theme
-                                    pastels-on-dark-theme
-                                    zonokai-theme
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
