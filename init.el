@@ -364,9 +364,14 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq magit-repository-directories '("~/Code/"))
+
   (setq-default enh-ruby-add-encoding-comment-on-save nil)
+
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+
+  (setq ns-use-srgb-colorspace nil)
+  (setq powerline-default-separator 'slant)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
