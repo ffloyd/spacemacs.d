@@ -1,5 +1,5 @@
 (setq ffloyds-themes-packages
-      '(solarized-theme))
+      '(nord-theme))
 
 ;; define programmatically the init functions
 (dolist (pkg ffloyds-themes-packages)
